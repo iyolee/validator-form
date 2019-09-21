@@ -101,5 +101,9 @@ npm test
 - 分支覆盖率(branch coverage): 100%
 - 语句覆盖率(statement coverage): 100%
 
+### More
+- 关于表单校验的小思考：[不得不面对的表单校验](https://github.com/iyolee/validator-form/blob/master/docs/validator.md)
+- 正则表达式列表：[正则表达式](https://github.com/iyolee/validator-form/blob/master/docs/regexp.md)
+
 ### Licence
 **MIT**
