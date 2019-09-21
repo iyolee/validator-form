@@ -7,6 +7,15 @@
  * }
  */
 export default {
+  // test case
+  error1: {
+    regexp: '/^[a-z]{1,50}$/',
+    message: '测试错误用例1'
+  },
+  error2: {
+    regexp: /^[a-z]{1,50}$/,
+    message: {}
+  },
   nameSpell: {
     regexp: /^[a-z]{1,50}$/,
     message: '姓名全拼应为小写字母'
