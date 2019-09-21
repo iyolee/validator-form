@@ -63,7 +63,8 @@ function _handleAndCheckArgs(a1 = _mandatoryArgs('first'),
  */
 function _validateSingleValue(value, strategyArr) {
   const resultCache = {
-    isValid: true
+    isValid: true,
+    message: []
   };
   strategyArr.forEach(strategyName => {
     const { regexp, message } = validateStrategy[strategyName];
@@ -75,7 +76,7 @@ function _validateSingleValue(value, strategyArr) {
     }
     if (!regexp.test(value)) {
       resultCache.isValid = false;
-      resultCache.message = message;
+      resultCache.message.push(message);
     }
   });
   return resultCache;
@@ -103,16 +104,22 @@ export function validateValue(values, strategys, isMessageString = true) {
     isValid: true,
     message: []
   };
+  const singleValue = valueArr.length === 1;
   strategyArr.forEach((strategy, index) => {
     strategy = _isArray(strategy) ? strategy : [strategy];
-    const { isValid, message } = _validateSingleValue(valueArr[index], strategy);
+    const val = singleValue ? valueArr[0] : valueArr[index]
+    const { isValid, message } = _validateSingleValue(val, strategy);
     if (!isValid) {
       resultCache.isValid = false;
-      resultCache.message.push(message);
+      if (singleValue) {
+        resultCache.message.push(...message);
+      } else {
+        resultCache.message.push(message);
+      }
     }
   });
   if (isReturnStr) {
-    resultCache.message = resultCache.message.join('，');
+    resultCache.message = resultCache.message.join(',');
   }
   return resultCache;
 }

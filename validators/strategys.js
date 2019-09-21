@@ -8,11 +8,15 @@
  */
 export default {
   nameSpell: {
-    regexp: /^[a-zA-Z]{1,50}$/,
-    message: '姓名全拼为小写字母'
+    regexp: /^[a-z]{1,50}$/,
+    message: '姓名全拼应为小写字母'
   },
-  maxLength40Address: {
-    regexp: /^[\u4E00-\u9FA5A-Za-z0-9]{0,40}$/,
-    message: '户籍所在地市，户籍所在地详细地址，现居住地详细地址不能超过40个字'
+  maxLength10: {
+    regexp: /^[A-Za-z0-9]{1,10}$/,
+    message: '字符长度不能超过10'
+  },
+  email: {
+    regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
+    message: '邮箱格式不正确'
   }
 }
