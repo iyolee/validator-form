@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1569065790286" clover="3.2.0">
-  <project timestamp="1569065790286" name="All files">
+<coverage generated="1569124054688" clover="3.2.0">
+  <project timestamp="1569124054688" name="All files">
     <metrics statements="41" coveredstatements="41" conditionals="40" coveredconditionals="40" methods="10" coveredmethods="10" elements="91" coveredelements="91" complexity="0" loc="41" ncloc="41" packages="1" files="1" classes="1"/>
     <file name="index.js" path="/Users/jenkin/Documents/work/validator-form/validators/index.js">
       <metrics statements="41" coveredstatements="41" conditionals="40" coveredconditionals="40" methods="10" coveredmethods="10"/>
